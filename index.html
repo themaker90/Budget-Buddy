@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Budget Buddy</h1>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav>
+        <button onclick="showTab('dashboard')">Dashboard</button>
+        <button onclick="showTab('expense')">Add Expense</button>
+        <button onclick="showTab('income')">Add Income</button>
+        <button onclick="showTab('savings')">Savings Goal</button>
+    </nav>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="tab">
+        <h2>Dashboard Overview</h2>
+
+        <div class="stats">
+            <div class="card">💰 Balance<br><span id="balance">$0</span></div>
+            <div class="card">📈 Income<br><span id="totalIncome">$0</span></div>
+            <div class="card">📉 Expenses<br><span id="totalExpenses">$0</span></div>
+        </div>
+    </section>
+
+    <!-- Add Expense -->
+    <section id="expense" class="tab hidden">
+        <h2>Add Expense</h2>
+        <input type="text" id="expenseDesc" placeholder="Description">
+        <input type="number" id="expenseAmount" placeholder="Amount">
+        <button onclick="addExpense()">Add Expense</button>
+
+        <ul id="expenseList"></ul>
+    </section>
+
+    <!-- Add Income -->
+    <section id="income" class="tab hidden">
+        <h2>Add Income</h2>
+        <input type="text" id="incomeSource" placeholder="Income Source">
+        <input type="number" id="incomeAmount" placeholder="Amount">
+        <button onclick="addIncome()">Add Income</button>
+
+        <ul id="incomeList"></ul>
+    </section>
+
+    <!-- Savings Goal -->
+    <section id="savings" class="tab hidden">
+        <h2>Set Savings Goal</h2>
+        <input type="number" id="goalAmount" placeholder="Target Amount">
+        <input type="number" id="savedAmount" placeholder="Current Savings">
+        <button onclick="updateSavings()">Update Goal</button>
+
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+        <p id="savingsText"></p>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
